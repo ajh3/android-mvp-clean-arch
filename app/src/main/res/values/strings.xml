@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Android MVP Demo</string>
+    <string name="coworker_avatar">Avatar</string>
+    <string name="coworker_full_name">%1$s %2$s</string>
+    <string name="coworker_bio">\"%1$s\"</string>
+    <string name="coworker_id">ID: %1$d</string>
+    <string name="options_menu_sort">Sort by:</string>
+    <string name="options_menu_cmb">Download BSG cast</string>
+    <string name="options_menu_aaron">Download IT Crowd cast</string>
+    <string name="first_name_desc">First name (Z-A)</string>
+    <string name="first_name_asc">First name (A-Z)</string>
+    <string name="last_name_desc">Last name (Z-A)</string>
+    <string name="last_name_asc">Last name (A-Z)</string>
+    <string name="id_desc">ID (desc.)</string>
+    <string name="id_asc">ID (asc.)</string>
+</resources>

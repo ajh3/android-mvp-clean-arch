@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.aaronhalbert.androidmvpdemo"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    def appCompatVersion = "1.1.0-alpha01"
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+
+    def ktxVersion = "1.1.0-alpha03"
+    implementation "androidx.core:core-ktx:${ktxVersion}"
+
+    def constraintLayoutVersion = "1.1.3"
+    implementation "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+
+    def cardViewVersion = "1.0.0"
+    implementation "androidx.cardview:cardview:${cardViewVersion}"
+
+    def recyclerViewVersion = "1.0.0"
+    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+
+    def daggerVersion = "2.21"
+    compileOnly "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    def okHttpVersion = "3.12.1"
+    implementation "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+
+    def rxKotlinVersion = "2.3.0"
+    implementation "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
+
+    def rxAndroidVersion = "2.1.0"
+    implementation "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+
+    def javaxAnnotationVersion = "1.0"
+    implementation "javax.annotation:jsr250-api:${javaxAnnotationVersion}"
+
+    def javaxInjectVersion = "1"
+    implementation "javax.inject:javax.inject:${javaxInjectVersion}"
+
+    def androidAnnotationsVersion = "1.0.0"
+    implementation "androidx.annotation:annotation:${androidAnnotationsVersion}"
+
+    def retrofitVersion = "2.5.0"
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+
+    def glideVersion = "4.8.0"
+    implementation "com.github.bumptech.glide:glide:${glideVersion}"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    def jUnitVersion = "4.12"
+    testImplementation "junit:junit:${jUnitVersion}"
+
+    def assertJVersion = "3.8.0"
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+
+    def mockitoKotlinVersion = "2.1.0"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}"
+
+    def androidSupportRunnerVersion = "1.1.1"
+    androidTestImplementation "androidx.test:runner:${androidSupportRunnerVersion}"
+
+    def espressoVersion = "3.1.1"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${espressoVersion}"
+
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}"
+}
